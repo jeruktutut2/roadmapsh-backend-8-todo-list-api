@@ -1,0 +1,31 @@
+psql -h localhost -d project_users -U postgres -W
+\list \l
+\c todo_list
+\dt
+
+CREATE DATABASE todo_list;
+\c todo_list
+\dt
+
+CREATE TABLE users (
+  	id SERIAL PRIMARY KEY,
+    name varchar(50) NOT NULL, 
+  	email varchar(100) NOT NULL UNIQUE,
+  	password varchar(100) NOT NULL,
+	refresh_token TEXT NULL
+);
+
+ALTER TABLE users ADD refresh_token TEXT NULL;
+
+INSERT INTO users (id,name,email,password,refresh_token) VALUES (1,'John Doe','john@doe.com','$2a$10$hiBcD8BeUo4Omg4HrcgE2.5Go3rAEl6Sxbbhg6AGQpHV9C1XUaWbu', 'refresh_token');
+
+CREATE TABLE todos (
+  	id SERIAL PRIMARY KEY,
+	user_id INT REFERENCES users(id) NOT NULL,
+    title VARCHAR(50) NOT NULL, 
+  	description TEXT NOT NULL
+);
+
+INSERT INTO todos (id,user_id,title,description) VALUES (1,1,'Buy groceries','Buy milk, eggs, and bread');
+
+DROP TABLE IF EXISTS todos;
