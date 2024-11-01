@@ -40,6 +40,6 @@ export NUMBER_OF_LIMIT=1
 
 ## run project
 To run this project, just download the project, go to downloaded project and run it by typing ```go run main.go``` and press enter
-access it through browser with ```http://localhost:8080/api/v1/todos```
+access it through browser with ```http://localhost:8080/todos```
 
 ```happy koding and thank you :D```
