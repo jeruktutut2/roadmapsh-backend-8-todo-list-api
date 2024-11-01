@@ -24,6 +24,7 @@ This project is based on https://roadmap.sh/projects/todo-list-api
 ```go test -v test/unit_tests/services/user_service_test.go```
 
 ## add evironment variables
+```
 export ECHO_HOST=:8080
 export POSTGRES_HOST=localhost:5432
 export POSTGRES_USERNAME=postgres
@@ -37,6 +38,7 @@ export JWT_SECRET=secret
 export JWT_ACCESS_TOKEN_TIME=15
 export JWT_REFRESH_TOKEN_TIME=1
 export NUMBER_OF_LIMIT=1
+```
 
 ## run project
 To run this project, just download the project, go to downloaded project and run it by typing ```go run main.go``` and press enter
